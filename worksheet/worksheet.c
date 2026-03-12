@@ -118,12 +118,11 @@ int sum_array(int *arr, int n) {
  */
 void reverse_array(int *arr, int n) {
   // TODO: Implement this function
-  int tempN = n;
-  for (int i = 0; i != tempN || i > tempN; i++, tempN--){
+  for (int i = 0;  i < n/2; i++){ //(i < n/2 works best here as will loop up until they would start swapping back into place)
       int placeHolder = 0;
       placeHolder = arr[i];
-      arr[i] = arr[tempN];
-      arr[tempN] = placeHolder;
+      arr[i] = arr[n-1-i]; // (n-1-i gets the opposing value)
+      arr[n-1-i] = placeHolder;
   }
 
 }
@@ -144,7 +143,12 @@ void reverse_array(int *arr, int n) {
 double average(int *arr, int n) {
   // TODO: Implement this function
   // Hint: Be careful with integer division!
-  return 0.0; // Replace this
+  double sum = 0;
+  for (int i = 0; i<n; i++){
+    sum += arr[i];
+  }
+  double average = sum/n;
+  return average; // Replace this
 }
 
 /**
@@ -168,7 +172,14 @@ double average(int *arr, int n) {
 int find_max(int *arr, int n, int *index) {
   // TODO: Implement this function
   *index = 0;
-  return 0; // Replace this
+  int maximumValue = arr[0];
+  for (int i = 0; i != n; i++){
+    if (arr[i] > maximumValue){
+      maximumValue = arr[i];
+      *index = i;
+    }
+  }
+  return maximumValue; // Replace this
 }
 
 /* ============================================================

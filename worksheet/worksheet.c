@@ -1,4 +1,6 @@
 /**
+ * JOSEPH BUTCHER-JOHNS
+ * ID 201948424
  * Week 6 Worksheet - Functions Practice
  *
  * This worksheet tests your understanding of:
